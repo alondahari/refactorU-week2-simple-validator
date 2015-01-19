@@ -1,6 +1,10 @@
 p{
-  display: inline-block;
+  display: inline;
   margin-left: 20px;
+}
+
+li{
+  margin-bottom: 10px;
 }
 
 label{
