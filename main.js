@@ -2,19 +2,19 @@ var button = document.getElementById('check-valid');
 
 var fields = {
   "phone" : function(value){
-    return (value.charAt(3) == '-' && value.charAt(7) == '-');
+    return value.match(/^\d{3}-\d{3}-\d{4}$/);
   },
   "birth-date" : function(value){
-    return (value.charAt(3) == '-' && value.charAt(7) == '-');
+    return value.match(/^\d{2}\/\d{2}\/\d{2}$/);
   },
   "postal-code" : function(value){
-    return (value.charAt(3) == '-' && value.charAt(7) == '-');
+    return value.match(/^\d{5}$|^\d{5}-\d{4}$/);
   },
   "state" : function(value){
-    return (value.charAt(3) == '-' && value.charAt(7) == '-');
+    return value.match(/^[A-Z]$/);
   },
   "married" : function(value){
-    return (value.charAt(3) == '-' && value.charAt(7) == '-');
+    return value.match(/^yes$|^no$/i);
   }
 };
 
