@@ -1,4 +1,4 @@
-var button = document.getElementById('check-valid');
+var form = document.getElementsByTagName('form');
 
 var fields = {
   "phone" : function(value){
@@ -18,9 +18,8 @@ var fields = {
   }
 };
 
-function validate(elId, validator) {
-  var value = document.getElementById(elId).value;
-  return validator(value);
+function validate(el, validator) {
+  return validator(el.value);
 }
 
 function feedback(elId, value) {
@@ -28,11 +27,8 @@ function feedback(elId, value) {
   p.textContent = p.className = value ? 'valid' : 'invalid';
 }
 
-button.onclick = function (){
-  var field, isValid;
-  for (field in fields) {
-    isValid = validate( field, fields[field] );
-    feedback(field, isValid);
-  }
-
-};
+window.addEventListener('input', function (e){
+  var field = e.target, isValid;
+  isValid = validate( field, fields[field.id] );
+  feedback(field.id, isValid);
+}, false);
