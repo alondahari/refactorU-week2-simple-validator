@@ -1,0 +1,20 @@
+p{
+  display: inline-block;
+  margin-left: 20px;
+}
+
+label{
+  margin-right: 10px;
+}
+
+.valid{
+  color: green;
+}
+
+.invalid{
+  color: red;
+}
+
+button{
+  margin-left: 40px;
+}

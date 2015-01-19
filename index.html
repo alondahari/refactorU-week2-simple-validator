@@ -3,9 +3,42 @@
 <head>
   <meta charset="utf-8">
   <title>Untitled</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-	
+	<form action="">
+	  <ul>
+
+      <li>
+        <label for="phone-number">Enter phone number:</label>
+        <input id="phone-number" type="text">
+        <p id="feedback-phone"></p>
+      </li>
+      <li>
+        <label for="birth-date">Enter birth date:</label>
+        <input id="birth-date" type="text">
+        <p id="feedback-birth-date"></p>
+      </li>
+      <li>
+        <label for="postal-code">Enter postal code:</label>
+        <input id="postal-code" type="text">
+        <p id="feedback-postal-code"></p>
+      </li>
+      <li>
+        <label for="state-abbreviation">Enter state abbreviation:</label>
+        <input id="state-abbreviation" type="text">
+        <p id="feedback-state-abbreviation"></p>
+      </li>
+      <li>
+        <label for="married">married?</label>
+        <input id="married" type="text">
+        <p id="feedback-married"></p>
+      </li>
+
+	  </ul>
+	</form>
+
+  <button id="check-valid">Check if valid</button>
 	<script src="main.js"></script>
 
 </body>
