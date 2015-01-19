@@ -1,25 +1,15 @@
 var form = document.getElementsByTagName('form');
 
 var fields = {
-  "phone" : function(value){
-    return value.match(/^\d{3}-\d{3}-\d{4}$/);
-  },
-  "birth-date" : function(value){
-    return value.match(/^\d{2}\/\d{2}\/\d{2}$/);
-  },
-  "postal-code" : function(value){
-    return value.match(/^\d{5}$|^\d{5}-\d{4}$/);
-  },
-  "state" : function(value){
-    return value.match(/^[A-Z]$/);
-  },
-  "married" : function(value){
-    return value.match(/^yes$|^no$/i);
-  }
+  "phone" : /^\d{3}-\d{3}-\d{4}$/,
+  "birth-date" : /^\d{2}\/\d{2}\/\d{2}$/,
+  "postal-code" : /^\d{5}$|^\d{5}-\d{4}$/,
+  "state" : /^[A-Z]$/,
+  "married" : /^yes$|^no$/i
 };
 
-function validate(el, validator) {
-  return validator(el.value);
+function validate(el, rule) {
+  return el.value.match(rule);
 }
 
 function feedback(elId, value) {
